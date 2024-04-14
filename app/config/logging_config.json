@@ -1,0 +1,46 @@
+{
+    "version": 1,
+    "disable_existing_loggers": false,
+    "formatters": {
+        "default": {
+            "format": "%(asctime)s - %(levelname)s - %(module)s - %(message)s"
+        }
+    },
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "formatter": "default",
+            "level": "DEBUG",
+            "stream": "ext://sys.stdout"
+        },
+        "file": {
+            "class": "logging.FileHandler",
+            "formatter": "default",
+            "level": "DEBUG",
+            "filename": "logs/application.log",
+            "mode": "a"
+        }
+    },
+    "loggers": {
+        "uvicorn": {
+            "handlers": [
+                "console"
+            ],
+            "level": "INFO"
+        },
+        "app": {
+            "handlers": [
+                "console",
+                "file"
+            ],
+            "level": "DEBUG"
+        }
+    },
+    "root": {
+        "handlers": [
+            "console",
+            "file"
+        ],
+        "level": "DEBUG"
+    }
+}

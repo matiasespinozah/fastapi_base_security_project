@@ -1,0 +1,11 @@
+[MESSAGES CONTROL]
+disable=
+    C0111, # missing-docstring
+    C0103, # invalid-name
+    R0903, # too-few-public-methods
+    E0402, # import-error
+
+[MASTER]
+ignore=
+    migrations,
+    settings.py
